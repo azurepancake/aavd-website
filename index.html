@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Anchors Away Vessel Documentation</title>
@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/slide.js"></script>
+  <script src="js/popover.js"></script>
 </head>
 <body id="myPage">
 <div class="jumbotron text-center">
@@ -25,7 +26,8 @@
       <h2>About Us</h2>
       <h4>We want to make documenting your vessel easy. Our mission is to help you enjoy the boat you just purchased as soon as possible by alleviating all the paperwork which needs to be filled out and submitted to the Coast Guard. Knowing what needs to be done in order to document your vessel is our job. With many years in the boating industry, Anchors Away can take the hassle out of documenting your boat.</h4>
       <p>If you are like many people, you are purchasing your boat for recreational purposes. A Saturday cruise, a Sunday brunch at your favorite restaurant along a waterway, or a night of fishing with your friends may be just what you need to wash away the stresses of the week. But there are also endorsements for chartering your vessel, coastwise trade or the fishing industry. Any of these endorsements allow you to use your vessel for recreational purposes but a recreation endorsement does not allow you to engage in any of the other.</p>
-      <button class="btn btn-default btn-lg">Get in Touch</button>
+      <br>
+      <a href="#" data-toggle="popover" title="Contact Us!" data-content="Please feel free to contact us via phone at (954) 956-7775 or email at anchorsaway@aavd.net"><button class="btn btn-default btn-lg">Get in Touch</button></a>
     </div>
     <div class="col-sm-4">
       <img src="images/boat1.jpg" class="img-circle" alt="Boat1"> 
@@ -34,7 +36,6 @@
 </div>
 <div id="services" class="container-fluid text-center bg-grey">
   <h2>SERVICES</h2>
-  <h4>What we offer</h4>
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
@@ -66,13 +67,42 @@
     </div>
   </div>
 </div>
-<div id="application" class="container-fluid">
-  <h2 class="text-center">APPLICATION</h2>
-  <h4>Ready to get started? It's easy!</h4>
-  <p>If you are applying or just inquiring about prices for Coast Guard documentation/State Titling/State registration, or special options such as setting up domestic or foreign corporations/registries, please fill out our application.</p>
-  <button class="btn btn-default btn-lg slideanim">Start Application</button>
+<div id="faq" class="container-fluid">
+  <h2 class="text-center">FAQ</h2>
+  <div class="row slideanim">
+    <div class="col-sm-12">
+      <h4>What is Coast Guard documentation?</h4>
+      <p>When you document your boat with the U.S. Coast Guard, you are registering your vessel with a national agency. The Coast Guard issues an official number which is exclusive to your vessel.</p>
+      <ul>
+        <li>Think of it as a finger print. This number is secured to your vessel. Should your boat have the unthinkable happen, an accident or theft, this number makes it much easier to identify your boat.</li>
+	<li>Because the Coast Guard is a federal agency, recovery of your vessel and the prosecution of anyone damaging your vessel in any way may become easier.</li>
+	<li>It provides you with proof of citizenship when entering foreign waters.</li>
+      <br>
+    </div>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-12">
+      <h4>What are the requirements to document my boat?</h4>
+      <p>You must be a U.S. Citizen. Only a U.S. Citizen can document a boat with the Coast Guard and you must provide proof of your citizenship. Boats less than 5 net tons are generally registered with the state it is going to be operated in. Most boats over 5 net tons may be documented.</p>
+      <br>
+    </div>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-12">
+      <h4>Why should I document by boat?</h4>
+      <p>Besides the reasons noted above, if you are planning on financing your vessel, most lending institutions require that the vessel be Coast Guard documented.</p>
+      <br>
+    </div>
+  </div>
 </div>
-<div id="contact" class="container-fluid bg-grey">
+<div id="application" class="container-fluid bg-grey">
+  <h2 class="text-center">APPLICATION</h2>
+  <h4 class="slideanim">Ready to get started? It's easy!</h4>
+  <p class="slideanim">If you are applying or just inquiring about prices for Coast Guard documentation/State Titling/State registration, or special options such as setting up domestic or foreign corporations/registries, please fill out our application.</p>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsiRYBXxzPf_N2dYfu7oJI0ckEVFI88tJq1gKWYiSoou3rXw/viewform?usp=sf_link"><button class="btn btn-default btn-lg slideanim">Start Application</button></a>
+</div>
+<div id="contact" class="container-fluid">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
@@ -82,6 +112,7 @@
       <p><span class="glyphicon glyphicon-envelope"></span> anchorsaway@aavd.net</p>
     </div>
     <div class="col-sm-7">
+      <form method="post" action="contact.php">
       <div class="row slideanim">
         <div class="col-sm-6 form-groupl">
           <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
@@ -90,8 +121,8 @@
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control slideanim" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row slideanim">
+      <textarea class="form-control slideanim" id="message" name="message" placeholder="Message" rows="5"></textarea><br>
+      <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Send</button>
         </div>
@@ -109,20 +140,21 @@
       </button>
       <i class="fab fa-facebook social-icon"></i>
       <i class="fab fa-google-plus-square social-icon"></i>
-      <i class="fas fa-phone-square social-icon"></i>
-      <i class="fas fa-envelope-square social-icon"></i>
+      <a href="#" data-toggle="popover" title="Call us!" data-content="(954) 956-7775"><i class="fas fa-phone-square social-icon"></i></a>
+      <a href="#" data-toggle="popover" title="Email us!" data-content="anchorsaway@aavd.net"><i class="fas fa-envelope-square social-icon"></i></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
+	<li><a href="#faq">FAQ</a></li>
 	<li><a href="#application">APPLICATION</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
   </div>
 </nav> 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center bg-grey">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
